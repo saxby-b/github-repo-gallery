@@ -38,7 +38,7 @@ const information = function (user) {
 
 const getRepoInfo = async function () {
   const resource = await fetch(
-    `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`
+    `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`,
   );
   const repoInfo = await resource.json();
   displayRepoInfo(repoInfo);
@@ -63,7 +63,7 @@ repoList.addEventListener("click", function (e) {
 
 const specificRepoInfo = async function (repoName) {
   const res = await fetch(
-    `https://api.github.com/repos/${username}/${repoName}`
+    `https://api.github.com/repos/${username}/${repoName}`,
   );
   const repoInfo = await res.json();
   console.log(repoInfo);
@@ -108,11 +108,11 @@ filterInput.addEventListener("input", function (e) {
 
   for (const repo of repos) {
     const repoLowerCase = repo.innerText.toLowerCase();
-  
-  if (repoLowerCase.includes(trueValue)) {
-    repo.classList.remove("hide");
-  } else {
-    repo.classList.add("hide");
+
+    if (repoLowerCase.includes(trueValue)) {
+      repo.classList.remove("hide");
+    } else {
+      repo.classList.add("hide");
+    }
   }
-}
 });
