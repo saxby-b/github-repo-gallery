@@ -139,6 +139,10 @@ ul {
   padding-bottom: 19px;
 }
 
+p {
+  line-height: 25px;
+}
+
 .filter-repos {
   width: 300px;
   margin-top: 1em;
